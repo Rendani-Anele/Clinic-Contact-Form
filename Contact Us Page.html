@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Clinic Contact Form</title>
+    <link rel="stylesheet" href="styleprac4.css">
+    
+
+</head>
+<body>
+    
+<div class="logo">
+    <img src="UMP CLINIC logo.png" alt="Clinic Logo">
+    
+</div>
+    <div class="form-container">
+        <h1>Contact Us</h1>
+
+        
+        <br>
+       <!--NOTE: WE DO NOT USE THE "ACTION" ATTRIBUTE SINCE WE ARE NOT SUBMITTING TO A BACKEND 
+        <form action="process.php" method="POST">-->
+            <form class="contact-form" onsubmit="event.preventDefault(); ShowContactPopUp();" >
+            <label for="name">Full Name(s):</label>
+            <input type="text" id="name" name="name" required
+            placeholder="Enter your full name(s)">
+            <br>
+            
+
+            <label for="student-number">Student Number:</label>
+            <input type="text" id="student-number" name="student-number" required
+            placeholder="Enter your student number">
+            <br>
+            
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required
+            placeholder="Enter your email address">
+            <br>
+            <label for="contact detials">Contact details:</label>
+            <input type="number" id="contact details" name="contact details" required>
+            <br>
+            
+
+            <label for="date">Preferred Date of Visit:</label>
+            <input type="date" id="date" name="date" required>
+            <br>
+            <label for="reason">Reason for Visit:</label>
+            <select name="reason">
+                <option value="select">SELECT BELOW</option>
+                <option value="checkup">General Check-up</option>
+                <option value="emergency">Emergency</option>
+                <option value="counselling">Health Advice & Counselling</option>
+                <option value="sexual_health">Sexual Health & Family Planning</option>
+                <option value="other">Other</option>
+            
+            </select>
+            <br>
+            
+
+            <label for="reason">Message:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+            <br>
+
+            <button type="submit">Submit</button>
+            
+
+    <script>
+        function ShowContactPopUp() {
+            alert("Thank you for contacting: UMP CAMPUS CLINIC. Your message has been Successfully Submitted!");
+        }
+    </script>
+            
+            <br>
+
+            <div class="info-box">
+                <h3>UMP Campus Clinic Services:</h3>
+                <ul>
+                    <li>Primary Health Care & Referrals</li>
+                    <li>Emergency Services</li>
+                    <li>Sexual Health & Family Planning</li>
+                    <li>Chronic Illness Management</li>
+                    <li>Health Advice & Counselling</li>
+                </ul>
+                <p><strong>Operating Hours:</strong> Monday to Friday, 08:00 AM - 16:30 PM</p>
+                <p>Location: Building 7, First Floor</p>
+                <p><b>Email adress:ump-clinic@ump.ac.za</b></p>
+                <br>
+                <h5>&copy Copyight 2025. UMP CLINIC</h5>
+            </div>
+        </div>
+        </form>
+
+   
+        <script>
+            function showPills() {
+              for (let i = 0; i < 60; i++) {
+                const pill = document.createElement('div');
+                pill.className = 'falling-pill';
+                pill.innerHTML = '💊';
+                pill.style.left = Math.random() * 100 + 'vw';
+                pill.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(pill);
+          
+                setTimeout(() => {
+                  pill.remove();
+                }, 10000); // Remove after 5 seconds
+              }
+            }
+          
+            // Attach to form submission
+            document.addEventListener('DOMContentLoaded', () => {
+              const form = document.querySelector('form');
+              if (form) {
+                form.addEventListener('submit', (e) => {
+                  e.preventDefault(); // prevent actual submission (for testing)
+                  showPills();
+                  // Optional: show success message
+                  alert("Your form was successfully submitted!");
+                  form.reset(); // Reset the form
+                });
+              }
+            });
+          </script>
+
+</body>
+<footer>
+    
+</footer>
+
+</html>
